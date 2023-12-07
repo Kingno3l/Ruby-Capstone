@@ -1,6 +1,6 @@
 require_relative 'operations/file_operations'
 
-# book_label_operations = FileOperations.new(books = [], label = [])
+book_label_operations = FileOperations.new(books = [], label = [])
 
 def options
   puts '1. List all books'
@@ -28,7 +28,7 @@ when 2
 when 3
   book_label_operations.add_new_book
 when 4
-  book_label_operations.add_new_label.add_new_label
+  book_label_operations.add_new_label
 when 5
   exit_application
   break
