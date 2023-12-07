@@ -1,34 +1,39 @@
-require_relative 'classes/item'
+require_relative 'operations/file_operations'
 
-# Helper method to display options
-def display_options
-  puts 'Options:'
-  puts '1. Create new item'
-  puts '2. Archive an item'
-  puts '3. Quit'
+# book_label_operations = FileOperations.new(books = [], label = [])
+
+def options
+  puts '1. List all books'
+  puts '2. List all labels'
+  puts '3. Add a new book'
+  puts '4. Add a new label'
+  puts '5. Quit'
 end
 
-# Main app loop
+def exit_application
+  puts 'Exiting Application... Thank you!'
+  puts '...'
+end
+
 loop do
-  puts 'Welcome to the Item Manager App!'
-  display_options
+  puts 'Enter your options...'
+options
+choice = gets.chomp.to_i
 
-  print 'Please select an option: '
-  choice = gets.chomp.strip.to_i
+case choice
+when 1
+  book_label_operations.list_all_books
+when 2
+  book_label_operations.list_all_labels
+when 3
+  book_label_operations.add_new_book
+when 4
+  book_label_operations.add_new_label.add_new_label
+when 5
+  exit_application
+  break
+else
+  puts 'Invalid input, try again later.'
+end
 
-  case choice
-  when 1
-    puts 'Creating a new item...'
-    # Logic to create a new item
-    # You can implement this part as per your requirement
-  when 2
-    puts 'Archiving an item...'
-    # Logic to archive an item
-    # You can implement this part as per your requirement
-  when 3
-    puts 'Exiting the app. Goodbye!'
-    break
-  else
-    puts 'Invalid option. Please choose a valid option.'
-  end
 end
