@@ -1,26 +1,45 @@
+# item.rb
 require 'date'
 
 class Item
-  attr_accessor :genre, :author, :source, :label, :publish_date, :archived
-  attr_reader :id
+  attr_accessor :publish_date, :archived
+  attr_reader :id, :genre, :author, :label, :source
 
-  def initialize(publish_date, archived)
-    @id = rand(1..1000)
-    @publish_date = Date.parse(publish_date) if publish_date
+  def initialize(publish_date, archived: false)
+    @id = Random.rand(1...1000)
+    @publish_date = publish_date
     @archived = archived
-  end 
+  end
 
-  def can_be_archived
-    return false unless publish_date
-    current_date = Date.today.year
-    to_be_archived = current_date - @publish_date.year
-    to_be_archived > 10
+  def genre=(genre)
+    @genre = genre
+    genre.items.push(self) unless genre.items.include?(self)
+  end
+
+  def author=(author)
+    @author = author
+    author.items << self unless author.items.include?(self)
+  end
+
+  def label=(label)
+    @label = label
+    label.items.push(self) unless label.items.include?(self)
+  end
+
+  def source=(source)
+    @source = source
+    source.items.push(self) unless source.items.include?(self)
   end
 
   def move_to_archive
-    @archive = can_be_archived?
+    return unless can_be_archived?
+
+    @archived = true
+  end
+
+  private
+
+  def can_be_archived?
+    Date.today.year - @publish_date > 10
   end
 end
-
-item1 = Item.new('2023-01-02', true)
-puts "#{item1.can_be_archived}"

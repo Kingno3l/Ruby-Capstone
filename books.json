@@ -1,30 +1,20 @@
 [
   {
-    "id": 888,
-    "publisher": "we",
-    "cover_state": "g",
-    "archived": "y",
-    "publish_date": "2022-12-12"
+    "id": 395,
+    "publish_date": 2023,
+    "cover_state": "bad",
+    "publisher": "Anold"
   },
   {
-    "id": 848,
-    "publisher": "we",
-    "cover_state": "g",
-    "archived": "t",
-    "publish_date": "2022-12-12"
+    "id": 750,
+    "publish_date": 2023,
+    "cover_state": "bad",
+    "publisher": "james"
   },
   {
-    "id": 459,
-    "publisher": "pp",
-    "cover_state": "g",
-    "archived": "t",
-    "publish_date": "2012-12-12"
-  },
-  {
-    "id": 862,
-    "publisher": "bk",
-    "cover_state": "y",
-    "archived": "t",
-    "publish_date": "2021-12-12"
+    "id": 397,
+    "publish_date": 2023,
+    "cover_state": "good",
+    "publisher": "ronald"
   }
 ]
