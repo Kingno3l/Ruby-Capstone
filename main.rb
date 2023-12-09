@@ -1,6 +1,6 @@
 require_relative 'classes/item'
 require_relative 'app'
-require_relative 'utils/book_handler'
+require_relative 'Utils/book_handler'
 
 # Entry point for the console app
 class Main

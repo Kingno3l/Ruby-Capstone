@@ -1,7 +1,7 @@
 # book_handler.rb
-require_relative '../Classes/item'
-require_relative '../Classes/book'
-require_relative '../Classes/label'
+require_relative '../classes/item'
+require_relative '../classes/book'
+require_relative '../classes/label'
 require_relative 'book_service'
 require_relative '../app'
 
